@@ -2,9 +2,9 @@
 #
 class mypi::core {
 
-   package { $::mypi::params::packages:
-     ensure => installed,
-   }
+  package { $::mypi::params::packages:
+    ensure => installed,
+  }
 
   file { '/opt':
     ensure => directory,
@@ -30,6 +30,9 @@ class mypi::core {
       ensure => present,
       path   => '/etc/fstab',
       line   => "$::mypi::params::extdrive $::mypi::params::extdrivepath ext4 defaults,noatime,nodiratime,nodev,nofail  0 1",
+    } ~> exec { 'mounts':
+      command => '/bin/mount -a',
+      refreshonly => true,
     }
   }
 
