@@ -12,3 +12,7 @@
 * mypi
 * mypi::core
 * mypi::params
+
+# Running
+
+      puppet apply --test -e "include mypi"

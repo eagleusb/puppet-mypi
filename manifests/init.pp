@@ -8,10 +8,11 @@
 #
 # Copyright 2016 Leslie-Alexandre DENIS
 #
-class mypi inherits params {
+class mypi {
 
   if ($hardwaremodel == 'armv6l' and $osfamily == 'Debian') {
     notify { 'Welcome, this brand new RaspberryPi will be pimped': }
+    require mypi::params
     include mypi::core
   }
 

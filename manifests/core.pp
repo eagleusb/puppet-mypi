@@ -2,7 +2,7 @@
 #
 class mypi::core {
 
-   package { "$packages":
+   package { $::mypi::params::packages:
      ensure => installed,
    }
 

@@ -2,6 +2,6 @@
 #
 class mypi::params {
 
-  $packages = [ 'vim', 'git' ]
+  $packages = [ 'vim', 'git', ]
 
 }
