@@ -14,6 +14,7 @@ class mypi {
     notify { 'Welcome, this brand new RaspberryPi will be pimped': }
     require mypi::params
     include mypi::core
+    include mypi::opt
   }
 
 }
