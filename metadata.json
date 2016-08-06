@@ -1,0 +1,14 @@
+{
+  "name": "puppet-mypi",
+  "version": "0.1.0",
+  "author": "leslie-alexandre.denis",
+  "summary": "Setup all home services easily.",
+  "license": "Apache 2.0",
+  "source": "https://github.com/grumpycatt/puppet-mypi",
+  "project_page": "https://github.com/grumpycatt/puppet-mypi",
+  "issues_url": "https://github.com/grumpycatt/puppet-mypi/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
