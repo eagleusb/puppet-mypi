@@ -25,6 +25,13 @@ class mypi::core {
     ensure => absent,
   }
 
+  user { 'pad':
+    comment => 'I take notes',
+    home => '/nonexistent',
+    ensure => present,
+    shell => '/usr/sbin/nologin',
+  }
+
   if 'sda' in "$blockdevices" {
     file_line { 'fstab':
       ensure => present,
