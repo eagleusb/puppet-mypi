@@ -11,6 +11,8 @@
 
 * mypi
 * mypi::core
+* mypi::opt
+* mypi::httpd
 * mypi::params
 
 # Running
