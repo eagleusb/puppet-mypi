@@ -43,5 +43,20 @@ class mypi::core {
     }
   }
 
+  host { 'hostname':
+    ensure => 'present',
+    name => "${::mypi::params::hostname}",
+    ip => '127.0.0.1',
+  }
+
+  host { 'raspberrypi':
+    ensure => 'absent',
+  }
+
+  exec { 'set-hostname':
+    command => "/usr/bin/hostnamectl set-hostname ${::mypi::params::hostname}",
+    unless  => '/usr/bin/hostnamectl --static | /bin/grep -q eagleusb',
+  }
+
 
 }
