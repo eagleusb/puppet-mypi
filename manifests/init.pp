@@ -16,6 +16,7 @@ class mypi {
     require mypi::params
     include mypi::core
     include mypi::opt
+    include mypi::httpd
   }
 
 }

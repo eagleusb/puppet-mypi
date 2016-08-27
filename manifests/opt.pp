@@ -2,7 +2,7 @@
 #
 class mypi::opt {
 
-  file { "${::mypi::params::extdrivepath}/opt":
+  file { [ "${::mypi::params::extdrivepath}/opt", "${::mypi::params::extdrivepath}/log" ]:
     ensure => directory,
     mode => '0755',
   }
