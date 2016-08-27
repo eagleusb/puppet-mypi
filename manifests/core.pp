@@ -11,7 +11,7 @@ class mypi::core {
     mode => '0644',
   }
 
-  file { '/opt/tools':
+  file { [ '/opt/tools' ]:
     ensure => directory,
     mode => '0770',
   }
@@ -56,6 +56,14 @@ class mypi::core {
   exec { 'set-hostname':
     command => "/usr/bin/hostnamectl set-hostname ${::mypi::params::hostname}",
     unless  => '/usr/bin/hostnamectl --static | /bin/grep -q eagleusb',
+  }
+
+  file { 'addons':
+    ensure  => file,
+    path    => '/opt/tools/bin',
+    mode    => '0770',
+    source  => [ "puppet:///modules/${module_name}/scripts", ],
+    recurse => true,
   }
 
 
