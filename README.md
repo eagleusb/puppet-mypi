@@ -15,6 +15,10 @@
 * mypi::httpd
 * mypi::params
 
+# Installation (manual)
+
+      mv puppet-mypi /etc/puppet/modules/mypi
+
 # Running
 
       puppet apply --test -e "include mypi"
