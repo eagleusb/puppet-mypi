@@ -23,6 +23,13 @@ class mypi::opt {
   exec { 'certbot':
     command => "/usr/bin/git clone -b ${::mypi::params::certbot_vtag} --progress https://github.com/certbot/certbot.git ${::mypi::params::extdrivepath}/opt/certbot",
     creates => "${::mypi::params::extdrivepath}/opt/certbot",
+  } ~> file { "${::mypi::params::extdrivepath}/opt/certbot/certbot-auto":
+    mode => '0770',
+  }
+
+  cron { 'certbot_renewal':
+    user      => 'root',
+    monthday  => '1'
   }
 
 }
