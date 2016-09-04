@@ -27,6 +27,14 @@ class mypi::opt {
     mode => '0770',
   }
 
+  ->
+
+  file { '/etc/letsencrypt/cli.ini':
+    ensure  => file,
+    mode    => '0640',
+    content => template("${module_name}/cli.ini.erb"),
+  }
+
   cron { 'certbot_renewal':
     command   => "${::mypi::params::extdrivepath}/opt/certbot/certbot-auto renew --quiet --no-self-upgrade",
     user      => 'root',

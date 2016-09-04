@@ -1,0 +1,39 @@
+# This file is managed by Puppet, from <%= @module_name %>
+# This is an example of the kind of things you can do in a configuration file.
+# Run Certbot with "--help" to learn more about the available options or
+# go to https://certbot.eff.org/docs/using.html#command-line
+
+# Agree to the ACME Subscriber Agreement (default: False)
+agree-tos = True
+
+# (letsencrypt-auto only) prevent the letsencrypt-auto script from upgrading itself to newer released
+no-self-upgrade = True
+
+# Size of the RSA key. (default: 2048)
+rsa-key-size = 2048
+
+# Adds the OCSP Must Staple extension to the certificate.
+# Autoconfigures OCSP Stapling for supported setups (Apache version >= 2.3.3 )
+# (default: False)
+must-staple = True
+
+# Uncomment and update to register with the specified e-mail address
+email = leslie@morningopenstack.org
+
+# Uncomment and update to generate certificates for the specified domains.
+domains = example.com, www.example.com
+
+# Uncomment to use a text interface instead of ncurses
+# text = True
+
+# Authenticator plugin name. (default: None)
+authenticator = standalone
+
+# Supported challenges. Preferred in the order they are listed.
+# (default: tls-sni-01,http-01)
+standalone-supported-challenges = http-01
+
+# Uncomment to use the webroot authenticator. Replace webroot-path with the
+# path to the public_html / webroot folder being served by your web server.
+# authenticator = webroot
+# webroot-path = /usr/share/nginx/html
