@@ -2,9 +2,11 @@
 #
 class mypi::params {
 
-  $packages = [ 'vim', 'git', 'nodejs', 'npm', 'apt-transport-https', 'apt-file', 'dnsutils', ]
-  $extdrive = '/dev/sda'
-  $extdrivepath = '/mnt/usbdrive01'
-  $hostname = 'eagleusb'
+  $packages         = [ 'vim', 'git', 'nodejs', 'npm', 'apt-transport-https', 'apt-file', 'dnsutils', ]
+  $extdrive         = '/dev/sda'
+  $extdrivepath     = '/mnt/usbdrive01'
+  $hostname         = 'eagleusb'
+  $default_tls_crt  = '/etc/ssl/certs/let-front.pem'
+  $default_tls_key  = '/etc/ssl/private/let-front.key'
 
 }
