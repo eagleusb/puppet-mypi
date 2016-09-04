@@ -28,6 +28,7 @@ class mypi::opt {
   }
 
   cron { 'certbot_renewal':
+    command   => "${::mypi::params::extdrivepath}/opt/certbot/certbot-auto renew --quiet --no-self-upgrade",
     user      => 'root',
     monthday  => '1'
   }
