@@ -8,5 +8,6 @@ class mypi::params {
   $hostname         = 'eagleusb'
   $default_tls_crt  = '/etc/ssl/certs/let-front.pem'
   $default_tls_key  = '/etc/ssl/private/let-front.key'
+  $certbot_vtag     = 'v0.8.1'
 
 }

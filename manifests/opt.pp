@@ -20,4 +20,9 @@ class mypi::opt {
         require => [ User['pad'] ],
       }
 
+  exec { 'certbot':
+    command => "/usr/bin/git clone -b ${::mypi::params::certbot_vtag} --progress https://github.com/certbot/certbot.git ${::mypi::params::extdrivepath}/opt/certbot",
+    creates => "${::mypi::params::extdrivepath}/opt/certbot",
+  }
+
 }
