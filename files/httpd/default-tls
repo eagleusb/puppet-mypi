@@ -1,0 +1,17 @@
+<IfModule mod_ssl.c>
+  SSLCertificateFile    /etc/letsencrypt/live/morningopenstack.org/fullchain.pem
+  SSLCertificateKeyFile /etc/letsencrypt/live/morningopenstack.org/privkey.pem
+
+  # SSL backends options
+  SSLProxyCheckPeerCN   on
+  SSLProxyCheckPeerName on
+
+  # OCSP Stapling, only in httpd 2.3.3 and later
+  SSLUseStapling                   on
+  SSLStaplingResponderTimeout      5
+  SSLStaplingReturnResponderErrors off
+  SSLStaplingCache                 shmcb:/var/run/ocsp(10240)
+
+  # HSTS (mod_headers is required) (15768000 seconds = 6 months)
+  Header always add Strict-Transport-Security "max-age=15768000"
+</IfModule>

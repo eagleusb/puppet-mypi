@@ -18,6 +18,7 @@ class mypi::httpd {
     serveradmin       => 'leslie@morningopenstack.org',
     server_signature  => 'Off',
     server_tokens     => 'Minimal',
+    purge_vhost_dir   => false,
   }
 
   class { 'apache::mod::ssl':
@@ -28,5 +29,18 @@ class mypi::httpd {
   }
 
   include apache::mod::php
+  include apache::mod::proxy
+  include apache::mod::headers
+
+  apache::listen { [ '80', '443', ]: }
+
+  apache::mod { 'proxy_http': }
+  
+  apache::custom_config { 'default-tls':
+    priority  => '01',
+    source    => "puppet:///modules/${module_name}/httpd/default-tls",
+  }
+
+
 
 }
