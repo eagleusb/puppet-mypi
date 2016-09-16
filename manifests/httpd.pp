@@ -31,11 +31,12 @@ class mypi::httpd {
   include apache::mod::php
   include apache::mod::proxy
   include apache::mod::headers
+  include apache::mod::rewrite
 
   apache::listen { [ '80', '443', ]: }
 
-  apache::mod { 'proxy_http': }
-  
+  apache::mod { [ 'proxy_http', ]: }
+
   apache::custom_config { 'default-tls':
     priority  => '01',
     source    => "puppet:///modules/${module_name}/httpd/default-tls",
