@@ -27,6 +27,16 @@ class mypi::opt {
     mode => '0770',
   }
 
+  exec { 'rainloop':
+    command => "/usr/bin/wget -q ${::mypi::params::rainloop_src} -O ${::mypi::params::extdrivepath}/www/rainloop.zip",
+    creates => "${::mypi::params::extdrivepath}/www/rainloop",
+  }
+
+  exec { 'miniflux':
+    command => "/usr/bin/wget -q ${::mypi::params::miniflux_src} -O - | tar xzf - -C ${::mypi::params::extdrivepath}/www",
+    creates => "${::mypi::params::extdrivepath}/www/miniflux",
+  }
+
   ->
 
   file { '/etc/letsencrypt/cli.ini':
