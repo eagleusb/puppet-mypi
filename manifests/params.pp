@@ -2,7 +2,7 @@
 #
 class mypi::params {
 
-  $packages         = [ 'vim', 'git', 'nodejs', 'npm', 'apt-transport-https', 'apt-file', 'dnsutils', 'php5-curl', 'php5-gd', ]
+  $packages         = [ 'vim', 'git', 'nodejs', 'npm', 'apt-transport-https', 'apt-file', 'dnsutils', 'php5-curl', 'php5-gd', 'php5-sqlite', 'php5-mysql', 'whois', ]
   $extdrive         = '/dev/sda'
   $extdrivepath     = '/mnt/usbdrive01'
   $hostname         = 'eagleusb'
