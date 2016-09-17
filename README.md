@@ -13,6 +13,7 @@
 * mypi::core
 * mypi::opt
 * mypi::httpd
+* mypi::node
 * mypi::params
 
 # Installation (manual)

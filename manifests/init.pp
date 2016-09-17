@@ -17,6 +17,7 @@ class mypi {
     include mypi::core
     include mypi::opt
     include mypi::httpd
+    include mypi::node
   }
 
 }
