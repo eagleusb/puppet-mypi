@@ -51,4 +51,10 @@ class mypi::opt {
     monthday  => '1'
   }
 
+  cron { 'miniflux_updates':
+    command => "php ${::mypi::params::extdrivepath}/www/miniflux/cronjob.php --limit 100 >/dev/null 2>&1",
+    user    => 'root',
+    hour    => 4,
+  }
+
 }
